@@ -18,7 +18,7 @@ jobs:
         uses: r0adkll/upload-google-play@v1
         with:
           serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT }}
-          packageName: com.semblanceoffunctionality.grocery
+          packageName: com.semblanceoffunctionality.eventbuddy
           releaseFiles: ./app-release.aab
           track: production
           status: draft
