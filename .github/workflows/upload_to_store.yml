@@ -1,0 +1,24 @@
+name: Upload
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  upload:
+    runs-on: macos-latest
+    steps:
+      - name: Download current candidate
+        run: "curl https://github.com/araneforseti/event-buddy/releases/download/candidate/app-release.aab -o app-release.aab"
+
+      - name: Debug
+        run: "ls"
+
+      - name: Release
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT }}
+          packageName: com.semblanceoffunctionality.grocery
+          releaseFiles: ./app-release.aab
+          track: production
+          status: draft

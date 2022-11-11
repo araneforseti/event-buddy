@@ -1,0 +1,42 @@
+name: Build
+
+on: pull_request
+
+env:
+  API_VERSION: 31
+  JAVA_VERSION: 11
+
+# Where will they run
+jobs:
+   run-tests:
+     uses: araneforseti/event-buddy/.github/workflows/tests.yml@82-build-issue-pipeline-does-not-release-artifact-as-candidate
+     with:
+       api_level: 31
+       java_version: 11
+
+   build-nonprod:
+     runs-on: macos-latest
+     needs: [run-tests]
+     if: github.ref != 'refs/heads/master'
+     steps:
+       - name: Checkout
+         uses: actions/checkout@v3.0.2
+
+       - name: Set up our JDK environment
+         uses: actions/setup-java@v3.4.0
+         with:
+           distribution: 'temurin'
+           java-version: ${{ env.JAVA_VERSION }}
+
+       - name: Gradle cache
+         uses: gradle/gradle-build-action@v2
+
+       - name: build debug
+         if: github.ref != 'refs/heads/master'
+         run: ./gradlew app:bundleDebug
+
+       - name: Upload our APK
+         uses: actions/upload-artifact@v3.1.0
+         with:
+           name: apk
+           path: app/build/outputs/apk/debug/app-*.apk
