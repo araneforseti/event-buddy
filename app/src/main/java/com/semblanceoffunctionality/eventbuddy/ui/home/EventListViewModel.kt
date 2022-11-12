@@ -9,7 +9,8 @@ class EventListViewModel : ViewModel() {
     private val buda : Event = Event("Budafest")
     private val king : Event = Event("King Swing")
     private val tlv : Event = Event("TLV")
+    private val list = arrayListOf(buda, king, tlv)
     val items = MutableLiveData<List<Event>>().apply {
-        arrayListOf(buda, king, tlv)
+        value = list
     }
 }

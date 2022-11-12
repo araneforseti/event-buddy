@@ -5,6 +5,9 @@
 
     <data>
         <variable
+            name="viewModel"
+            type="com.semblanceoffunctionality.eventbuddy.ui.home.EventViewModel" />
+        <variable
             name="event"
             type="com.semblanceoffunctionality.eventbuddy.data.Event" />
     </data>
@@ -22,7 +25,7 @@
                 android:id="@+id/event_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{event.name}"
+                android:text="@{viewModel.name}"
                 android:gravity="center"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
