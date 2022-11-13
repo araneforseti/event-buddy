@@ -7,29 +7,56 @@
         <variable
             name="viewModel"
             type="com.semblanceoffunctionality.eventbuddy.ui.home.EventViewModel" />
-        <variable
-            name="event"
-            type="com.semblanceoffunctionality.eventbuddy.data.Event" />
     </data>
 
     <androidx.cardview.widget.CardView
+        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="10dp"
             >
 
             <TextView
                 android:id="@+id/event_name"
-                android:layout_width="match_parent"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="@{viewModel.name}"
                 android:gravity="center"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Event Name"
+                />
+
+            <TextView
+                android:id="@+id/event_start"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/event_name"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@{viewModel.start}"
+                tools:text="01/01/23"
+                />
+            <TextView
+                android:id="@+id/event_dash"
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/event_start"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="-"
+                tools:text="-"
+                />
+            <TextView
+                android:id="@+id/event_end"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/event_dash"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@{viewModel.end}"
+                tools:text="01/12/23"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
