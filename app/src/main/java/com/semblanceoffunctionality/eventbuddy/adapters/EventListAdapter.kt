@@ -3,6 +3,7 @@ package com.semblanceoffunctionality.eventbuddy.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -10,6 +11,8 @@ import com.semblanceoffunctionality.eventbuddy.R
 import com.semblanceoffunctionality.eventbuddy.data.Event
 import com.semblanceoffunctionality.eventbuddy.databinding.ListEventCardBinding
 import com.semblanceoffunctionality.eventbuddy.ui.home.EventViewModel
+import com.semblanceoffunctionality.eventbuddy.ui.home.HomeFragment
+import com.semblanceoffunctionality.eventbuddy.ui.home.HomeFragmentDirections
 
 class EventListAdapter() :
     ListAdapter<Event, EventListAdapter.ViewHolder>(
@@ -35,6 +38,15 @@ class EventListAdapter() :
         (
         private val binding: ListEventCardBinding
     ) : RecyclerView.ViewHolder(binding.root) {
+        init {
+            binding.setClickListener {
+                binding.viewModel?.let { viewModel ->
+                    val action = HomeFragmentDirections
+                        .actionNavHomeToNavEvent(viewModel.name)
+                    it.findNavController().navigate(action)
+                }
+            }
+        }
 
         fun bind(listEvent: Event) {
             binding.apply {

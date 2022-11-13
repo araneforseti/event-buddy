@@ -7,6 +7,9 @@
         <variable
             name="viewModel"
             type="com.semblanceoffunctionality.eventbuddy.ui.home.EventViewModel" />
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener"/>
     </data>
 
     <androidx.cardview.widget.CardView
@@ -17,6 +20,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="@{clickListener}"
             android:padding="10dp"
             >
 

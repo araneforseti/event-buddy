@@ -9,7 +9,11 @@
         android:id="@+id/nav_home"
         android:name="com.semblanceoffunctionality.eventbuddy.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_event"
+            app:destination="@id/nav_event" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_gallery"
@@ -22,4 +26,15 @@
         android:name="com.semblanceoffunctionality.eventbuddy.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/nav_event"
+        android:name="com.semblanceoffunctionality.eventbuddy.ui.event.EventFragment"
+        android:label="Event Detail"
+        tools:layout="@layout/fragment_event">
+        <argument
+            android:name="event"
+            app:argType="string"
+            />
+    </fragment>
 </navigation>
