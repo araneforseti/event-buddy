@@ -13,6 +13,7 @@
 
     <string name="create">Create</string>
     <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
 
     <string name="event_name_hint">Event Name</string>
     <string name="event_start_hint">Estimated Event Start Date</string>

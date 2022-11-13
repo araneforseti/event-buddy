@@ -45,7 +45,6 @@ class HomeFragment : Fragment() {
         }
     }
 
-
     private fun createItemDialog(container: ViewGroup?) {
         activity?.let {
             val builder = AlertDialog.Builder(it)

@@ -1,0 +1,188 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.semblanceoffunctionality.eventbuddy.ui.event.EventViewModel" />
+    </data>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/event_name"
+            android:text="@{viewModel.event.name}"
+            android:inputType="textPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="4dp"
+            android:hint="@string/event_name_hint"
+            />
+
+        <EditText
+            android:id="@+id/event_start"
+            android:text="@{viewModel.event.dateStart}"
+            android:inputType="textPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="4dp"
+            android:hint="@string/event_start_hint"
+            />
+
+
+        <EditText
+            android:id="@+id/event_end"
+            android:text="@{viewModel.event.dateEnd}"
+            android:inputType="textPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="4dp"
+            android:hint="@string/event_end_hint"
+            />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/event_registered"
+            android:checked="@{viewModel.event.registered}"
+            android:text="Event Registered: "
+            android:inputType="textPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="4dp"
+            />
+
+        <EditText
+            android:id="@+id/event_venue"
+            android:text="@{viewModel.event.venue}"
+            android:inputType="textPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="4dp"
+            android:hint="Venue Info"
+            />
+
+        <EditText
+            android:id="@+id/event_website"
+            android:text="@{viewModel.event.website}"
+            android:inputType="textPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="4dp"
+            android:hint="Website"
+            />
+
+        <EditText
+            android:id="@+id/event_facebook"
+            android:text="@{viewModel.event.facebook}"
+            android:inputType="textPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="4dp"
+            android:hint="facebook"
+            />
+
+        <EditText
+            android:id="@+id/travel_info"
+            android:text="@{viewModel.event.travelInfo}"
+            android:inputType="textPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="4dp"
+            android:hint="Travel Info"
+            />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/travel_booked"
+            android:checked="@{viewModel.event.travelBooked}"
+            android:text="Travel Booked: "
+            android:inputType="textPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="4dp"
+            />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/hotel_booked"
+            android:checked="@{viewModel.event.travelBooked}"
+            android:text="Hotel Booked: "
+            android:inputType="textPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="4dp"
+            />
+
+        <EditText
+            android:id="@+id/hotel_info"
+            android:text="@{viewModel.event.hotelInfo}"
+            android:inputType="textPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="4dp"
+            android:hint="Hotel Info"
+            />
+
+        <EditText
+            android:id="@+id/roomies"
+            android:text="@{viewModel.event.roomies}"
+            android:inputType="textPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="4dp"
+            android:hint="Roomie(s)"
+            />
+
+        <EditText
+            android:id="@+id/expected_price"
+            android:text="@{viewModel.event.price}"
+            android:inputType="textPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="4dp"
+            android:hint="Expected Price"
+            />
+
+    </LinearLayout>
+</layout>

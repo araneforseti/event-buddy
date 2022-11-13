@@ -18,7 +18,7 @@
             android:id="@+id/event_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.name}"
+            android:text="@{viewModel.event.name}"
             android:gravity="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -29,7 +29,7 @@
             android:id="@+id/event_start"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.start}"
+            android:text="@{viewModel.event.dateStart}"
             android:gravity="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/event_name"
@@ -40,7 +40,7 @@
             android:id="@+id/event_end"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.end}"
+            android:text="@{viewModel.event.dateEnd}"
             android:gravity="center"
             app:layout_constraintStart_toEndOf="@+id/event_start"
             app:layout_constraintTop_toBottomOf="@+id/event_name"
@@ -51,7 +51,7 @@
             android:id="@+id/event_website"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.website}"
+            android:text="@{viewModel.event.website}"
             android:gravity="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/event_start"
@@ -62,7 +62,7 @@
             android:id="@+id/event_facebook"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.facebook}"
+            android:text="@{viewModel.event.facebook}"
             android:gravity="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/event_website"
@@ -73,7 +73,7 @@
             android:id="@+id/event_scoring"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.scoring}"
+            android:text="@{viewModel.event.scoring}"
             android:gravity="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/event_facebook"
@@ -84,7 +84,7 @@
             android:id="@+id/event_venue"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.venue}"
+            android:text="@{viewModel.event.venue}"
             android:gravity="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/event_scoring"
@@ -106,7 +106,7 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:checked="@{viewModel.hotelBooked}"
+            android:checked="@{viewModel.event.hotelBooked}"
             app:layout_constraintStart_toStartOf="@+id/event_hotel_label"
             app:layout_constraintTop_toBottomOf="@+id/event_hotel_label"
             android:text="Hotel Booked"
@@ -119,7 +119,7 @@
             android:gravity="center"
             app:layout_constraintStart_toStartOf="@+id/event_travel_label"
             app:layout_constraintTop_toBottomOf="@+id/event_booked"
-            android:text="@{viewModel.hotelInfo}"
+            android:text="@{viewModel.event.hotelInfo}"
             />
 
         <TextView
@@ -129,7 +129,7 @@
             android:gravity="center"
             app:layout_constraintStart_toStartOf="@+id/event_hotel_label"
             app:layout_constraintTop_toBottomOf="@+id/event_hotel_info"
-            android:text="@{viewModel.roomies}"
+            android:text="@{viewModel.event.roomies}"
             />
 
         <TextView
@@ -139,7 +139,7 @@
             android:gravity="center"
             app:layout_constraintStart_toStartOf="@+id/event_hotel_label"
             app:layout_constraintTop_toBottomOf="@+id/event_roomies"
-            android:text="@{viewModel.price}"
+            android:text="@{viewModel.event.price}"
             />
 
         <TextView
@@ -160,7 +160,7 @@
             app:layout_constraintStart_toStartOf="@+id/event_travel_label"
             app:layout_constraintTop_toBottomOf="@+id/event_travel_label"
             android:text="Travel Booked"
-            android:checked="@{viewModel.travelBooked}"
+            android:checked="@{viewModel.event.travelBooked}"
             />
 
         <TextView
@@ -170,11 +170,11 @@
             android:gravity="center"
             app:layout_constraintStart_toStartOf="@+id/event_travel_label"
             app:layout_constraintTop_toBottomOf="@+id/travel_booked"
-            android:text="@{viewModel.travelInfo}"
+            android:text="@{viewModel.event.travelInfo}"
             />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
+            android:id="@+id/edit_event"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"

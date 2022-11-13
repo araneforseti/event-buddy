@@ -10,7 +10,7 @@ class EventRepository @Inject constructor(private val eventDao: EventDao) {
         return eventDao.getAll()
     }
 
-    suspend fun addEvent(event: Event) {
-        return eventDao.insertAll(listOf(event))
-    }
+    suspend fun addEvent(event: Event) = eventDao.insertAll(listOf(event))
+
+    fun getEvent(eventName: String) = eventDao.getEventByName(eventName)
 }
