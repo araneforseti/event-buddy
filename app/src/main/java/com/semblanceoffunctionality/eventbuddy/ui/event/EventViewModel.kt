@@ -9,9 +9,28 @@ class EventViewModel(eventName: String) : ViewModel() {
     val name
         get() = event.name
     val start
-        //get() = event.dateStart
-        get() = "01/01/2023"
+        get() = event.dateStart
     val end
-        //get() = event.dateEnd
-        get() = "30/12/2023"
+        get() = event.dateEnd
+    val website
+        get() = event.website
+    val facebook
+        get() = event.facebook
+    val scoring
+        get() = event.scoring
+    val venue
+        get() = event.venue
+    val hotelInfo
+        get() = event.hotelInfo
+    val hotelBooked
+        get() = event.hotelBooked
+    val roomies
+        get() = event.roomies
+    val price
+        get() = event.price
+    val travelBooked
+        get() = event.travelBooked
+    val travelInfo
+        get() = event.travelInfo
+
 }

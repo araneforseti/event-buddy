@@ -8,16 +8,16 @@ import java.util.*
 @Entity(tableName = "events")
 data class Event(
     @PrimaryKey @ColumnInfo(name = "name") var name: String,
-    var dateStart: String="Now",
-    var dateEnd: String="Later",
-    var website: String = "",
-    var facebook: String = "",
-    var scoring: String = "",
-    var venue: String = "",
+    var dateStart: String="Start TBD",
+    var dateEnd: String="End TBD",
+    var website: String = "Website TBD",
+    var facebook: String = "Facebook TBD",
+    var scoring: String = "Scoring TBD",
+    var venue: String = "Venue TBD",
     var travelBooked: Boolean = false,
-    var travelInfo: String = "",
+    var travelInfo: String = "Travel Info tbd",
     var hotelBooked: Boolean = false,
-    var hotelInfo: String = "",
-    var roomes: String = "",
-    var price: String = ""
+    var hotelInfo: String = "Hotel Info tbd",
+    var roomies: String = "Roomies: TBD",
+    var price: String = "\$TBD"
 )
