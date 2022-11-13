@@ -47,6 +47,120 @@
             tools:text="- Dec 30, 2023"
             />
 
+        <TextView
+            android:id="@+id/event_website"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Website Here"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/event_start"
+            tools:text="Website Here"
+            />
+
+        <TextView
+            android:id="@+id/event_facebook"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Facebook Here"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/event_website"
+            tools:text="Facebook Here"
+            />
+
+        <TextView
+            android:id="@+id/event_scoring"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Scoring Here"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/event_facebook"
+            tools:text="Scoring Here"
+            />
+
+        <TextView
+            android:id="@+id/event_venue"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Venue Here"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/event_scoring"
+            tools:text="Venue Here"
+            />
+
+        <TextView
+            android:id="@+id/event_hotel_label"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@+id/event_travel_label"
+            app:layout_constraintTop_toBottomOf="@+id/event_travel_info"
+            android:text="-- Hotel Info --"
+            />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/event_booked"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@+id/event_hotel_label"
+            app:layout_constraintTop_toBottomOf="@+id/event_hotel_label"
+            android:text="Hotel Booked"
+            />
+
+        <TextView
+            android:id="@+id/event_roomies"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@+id/event_hotel_label"
+            app:layout_constraintTop_toBottomOf="@+id/event_booked"
+            android:text="Roomie(s):"
+            />
+
+        <TextView
+            android:id="@+id/event_hotel_price"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@+id/event_hotel_label"
+            app:layout_constraintTop_toBottomOf="@+id/event_roomies"
+            android:text="Expected Price: $$$"
+            />
+
+        <TextView
+            android:id="@+id/event_travel_label"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/event_end"
+            android:text="-- Travel Info --"
+            />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/travel_booked"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@+id/event_travel_label"
+            app:layout_constraintTop_toBottomOf="@+id/event_travel_label"
+            android:text="Travel Booked"
+            />
+
+        <TextView
+            android:id="@+id/event_travel_info"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@+id/event_travel_label"
+            app:layout_constraintTop_toBottomOf="@+id/travel_booked"
+            android:text="Travel Info Here"
+            />
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
             android:layout_width="wrap_content"

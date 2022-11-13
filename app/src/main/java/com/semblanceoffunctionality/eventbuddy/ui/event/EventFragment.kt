@@ -31,9 +31,6 @@ class EventFragment : Fragment() {
             false
         ).apply {
             viewModel = EventViewModel(eventName)
-            println("------")
-            println(viewModel?.name)
-            println("------")
             lifecycleOwner = viewLifecycleOwner
         }
 
