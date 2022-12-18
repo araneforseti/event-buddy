@@ -19,8 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class EventFragment : Fragment() {
 
-    private lateinit var binding: FragmentEventBinding
-    private val viewModel: EventViewModel by viewModels()
+    private val eventViewModel: EventViewModel by viewModels()
     private val args: EventFragmentArgs by navArgs()
 
     override fun onCreateView(
@@ -28,20 +27,19 @@ class EventFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val eventName = args.event
-        viewModel.updateEventName(eventName)
-
-        binding = DataBindingUtil.inflate<FragmentEventBinding>(
+        val binding = DataBindingUtil.inflate<FragmentEventBinding>(
             inflater,
             R.layout.fragment_event,
             container,
             false
         ).apply {
+            val eventName = args.event
+            viewModel = eventViewModel
             lifecycleOwner = viewLifecycleOwner
-        }
 
-        binding.editEvent.setOnClickListener {
-            editEventDialog(container)
+            editEvent.setOnClickListener {
+                editEventDialog(container)
+            }
         }
 
         return binding.root
@@ -70,7 +68,7 @@ class EventFragment : Fragment() {
                     val roomies = dialogView.findViewById<EditText>(R.id.roomies).text.toString()
                     val expectedPrice = dialogView.findViewById<EditText>(R.id.expected_price).text.toString()
                     val newEvent = Event(
-                        viewModel.event.value!!.id,
+                        eventViewModel.event.value!!.id,
                         eventName,
                         eventStart,
                         eventEnd,
@@ -86,7 +84,7 @@ class EventFragment : Fragment() {
                         roomies,
                         expectedPrice
                     )
-                    viewModel.updateEvent(newEvent)
+                    eventViewModel.updateEvent(newEvent)
                 }
                 setNegativeButton(R.string.cancel) { dialog, _ ->
                     dialog?.cancel()

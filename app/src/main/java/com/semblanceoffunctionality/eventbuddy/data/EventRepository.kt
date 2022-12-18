@@ -12,17 +12,7 @@ class EventRepository @Inject constructor(private val eventDao: EventDao) {
 
     suspend fun addEvent(event: Event) = eventDao.insertAll(listOf(event))
 
-    fun getEvent(eventName: String): Flow<Event> {
-        println("----")
-        println("-- name passed --")
-        println(eventName)
-        println("----")
-        var result = eventDao.getEventByName(eventName)
-        println("-- result --")
-        println(result.asLiveData().value)
-        println("----")
-        return result
-    }
+    fun getEvent(eventName: String) = eventDao.getEventByName(eventName)
 
     fun updateEvent(event: Event) = eventDao.updateEvent(event)
 }

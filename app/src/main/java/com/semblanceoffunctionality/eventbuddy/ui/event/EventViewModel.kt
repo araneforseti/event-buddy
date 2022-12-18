@@ -12,10 +12,13 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class EventViewModel @Inject internal constructor(
+class EventViewModel @Inject constructor(
     private val savedStateHandle: SavedStateHandle,
     private val eventRepository: EventRepository
 ) : ViewModel() {
+    var eventName: String = savedStateHandle.get<String>(EVENT_ID_SAVED_STATE_KEY)!!
+    val event = eventRepository.getEvent(eventName).asLiveData()
+
     fun updateEvent(event: Event) {
         CoroutineScope(Dispatchers.IO).launch {
             eventRepository.updateEvent(event)
@@ -23,15 +26,15 @@ class EventViewModel @Inject internal constructor(
     }
 
     fun updateEventName(eventName: String) {
-        this.eventName = eventName
-        this.event = eventRepository.getEvent(eventName).asLiveData()
-        println("-----")
-        println(this.event.value)
-        println("-----")
+//        this.eventName = eventName
+//        println("-- update name ---")
+//        println(eventName)
+//        println("-- end name ---")
+//        this.event = eventRepository.getEvent(eventName).asLiveData()
+//        println("-- update value ---")
+//        println(this.event.value)
+//        println("-- end value ---")
     }
-
-    var eventName: String = savedStateHandle.get<String>(EVENT_ID_SAVED_STATE_KEY)!!
-    var event = eventRepository.getEvent(eventName).asLiveData()
 
     companion object {
         private const val EVENT_ID_SAVED_STATE_KEY = "event"
