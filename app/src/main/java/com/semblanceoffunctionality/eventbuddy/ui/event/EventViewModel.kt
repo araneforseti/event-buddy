@@ -18,12 +18,20 @@ class EventViewModel @Inject internal constructor(
 ) : ViewModel() {
     fun updateEvent(event: Event) {
         CoroutineScope(Dispatchers.IO).launch {
-            eventRepository.addEvent(event)
+            eventRepository.updateEvent(event)
         }
     }
 
+    fun updateEventName(eventName: String) {
+        this.eventName = eventName
+        this.event = eventRepository.getEvent(eventName).asLiveData()
+        println("-----")
+        println(this.event.value)
+        println("-----")
+    }
+
     var eventName: String = savedStateHandle.get<String>(EVENT_ID_SAVED_STATE_KEY)!!
-    val event = eventRepository.getEvent(eventName).asLiveData()
+    var event = eventRepository.getEvent(eventName).asLiveData()
 
     companion object {
         private const val EVENT_ID_SAVED_STATE_KEY = "event"

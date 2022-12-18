@@ -21,7 +21,7 @@ class EventFragment : Fragment() {
 
     private lateinit var binding: FragmentEventBinding
     private val viewModel: EventViewModel by viewModels()
-    val args: EventFragmentArgs by navArgs()
+    private val args: EventFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,6 +29,7 @@ class EventFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val eventName = args.event
+        viewModel.updateEventName(eventName)
 
         binding = DataBindingUtil.inflate<FragmentEventBinding>(
             inflater,
@@ -68,7 +69,9 @@ class EventFragment : Fragment() {
                     val hotelInfo = dialogView.findViewById<EditText>(R.id.hotel_info).text.toString()
                     val roomies = dialogView.findViewById<EditText>(R.id.roomies).text.toString()
                     val expectedPrice = dialogView.findViewById<EditText>(R.id.expected_price).text.toString()
-                    val newEvent = Event(eventName,
+                    val newEvent = Event(
+                        viewModel.event.value!!.id,
+                        eventName,
                         eventStart,
                         eventEnd,
                         registered,
