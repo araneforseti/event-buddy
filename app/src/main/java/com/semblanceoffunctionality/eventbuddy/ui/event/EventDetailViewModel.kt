@@ -25,17 +25,6 @@ class EventDetailViewModel @Inject constructor(
         }
     }
 
-    fun updateEventName(eventName: String) {
-//        this.eventName = eventName
-//        println("-- update name ---")
-//        println(eventName)
-//        println("-- end name ---")
-//        this.event = eventRepository.getEvent(eventName).asLiveData()
-//        println("-- update value ---")
-//        println(this.event.value)
-//        println("-- end value ---")
-    }
-
     companion object {
         private const val EVENT_ID_SAVED_STATE_KEY = "event"
     }

@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         tools:context=".ui.home.HomeFragment">
 
-        <TextView
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/event_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
