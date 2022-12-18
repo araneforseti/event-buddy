@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.semblanceoffunctionality.eventbuddy.ui.event.EventViewModel" />
+            type="com.semblanceoffunctionality.eventbuddy.ui.event.EventDetailViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -25,7 +25,7 @@
             tools:text="Event Name"
             />
 
-        <TextView
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/event_start"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
@@ -36,7 +36,7 @@
             tools:text="Jan 01, 2023"
             />
 
-        <TextView
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/event_end"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
@@ -47,18 +47,40 @@
             tools:text="- Dec 30, 2023"
             />
 
-        <TextView
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/event_registered"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:checked="@{viewModel.event.registered}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/event_start"
+            android:text="Event Registered"
+            />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/event_paid"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:checked="@{viewModel.event.paid}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/event_end"
+            android:text="Event Paid"
+            />
+
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/event_website"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="@{viewModel.event.website}"
             android:gravity="center"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/event_start"
+            app:layout_constraintTop_toBottomOf="@+id/event_registered"
             tools:text="Website Here"
             />
 
-        <TextView
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/event_facebook"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
@@ -69,7 +91,7 @@
             tools:text="Facebook Here"
             />
 
-        <TextView
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/event_scoring"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
@@ -80,7 +102,7 @@
             tools:text="Scoring Here"
             />
 
-        <TextView
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/event_venue"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
@@ -102,7 +124,7 @@
             />
 
         <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/event_booked"
+            android:id="@+id/event_hotel_booked"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -112,17 +134,17 @@
             android:text="Hotel Booked"
             />
 
-        <TextView
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/event_hotel_info"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             app:layout_constraintStart_toStartOf="@+id/event_travel_label"
-            app:layout_constraintTop_toBottomOf="@+id/event_booked"
+            app:layout_constraintTop_toBottomOf="@+id/event_hotel_booked"
             android:text="@{viewModel.event.hotelInfo}"
             />
 
-        <TextView
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/event_roomies"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
@@ -132,7 +154,7 @@
             android:text="@{viewModel.event.roomies}"
             />
 
-        <TextView
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/event_hotel_price"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
@@ -148,7 +170,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/event_end"
+            app:layout_constraintTop_toBottomOf="@+id/event_paid"
             android:text="-- Travel Info --"
             />
 
@@ -163,7 +185,7 @@
             android:checked="@{viewModel.event.travelBooked}"
             />
 
-        <TextView
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/event_travel_info"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
@@ -174,7 +196,7 @@
             />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/edit_event"
+            android:id="@+id/save_event"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
@@ -182,7 +204,7 @@
             android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_edit"
-            android:contentDescription="Edit Button" />
+            app:srcCompat="@drawable/ic_save"
+            android:contentDescription="Save Button" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

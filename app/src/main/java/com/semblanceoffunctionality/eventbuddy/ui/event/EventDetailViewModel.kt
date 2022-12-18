@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class EventViewModel @Inject constructor(
+class EventDetailViewModel @Inject constructor(
     private val savedStateHandle: SavedStateHandle,
     private val eventRepository: EventRepository
 ) : ViewModel() {

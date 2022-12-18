@@ -12,6 +12,7 @@ data class Event(
     var dateStart: String="Start TBD",
     var dateEnd: String="End TBD",
     var registered: Boolean = false,
+    var paid: Boolean = false,
     var website: String = "Website TBD",
     var facebook: String = "Facebook TBD",
     var scoring: String = "Scoring TBD",
