@@ -19,6 +19,7 @@ class EventRepositoryTest {
     private lateinit var database: AppDatabase
     private lateinit var eventDao: EventDao
     private lateinit var eventRepository: EventRepository
+    private val eventA = Event("eventA", "Event A")
 
     @get:Rule
     var instantTaskExecutorRule = InstantTaskExecutorRule()
@@ -29,6 +30,7 @@ class EventRepositoryTest {
         database = Room.inMemoryDatabaseBuilder(context, AppDatabase::class.java).build()
         eventDao = database.eventDao()
         eventRepository = EventRepository(eventDao)
+        eventDao.insertAll(listOf(eventA))
     }
 
     @After
@@ -36,4 +38,17 @@ class EventRepositoryTest {
         database.close()
     }
 
+    @Test
+    fun testGetEvent() = runBlocking {
+        val eventResult = eventRepository.getEvent(eventA.name).first()
+
+        assertThat(eventResult.name, equalTo(eventA.name))
+    }
+
+    @Test
+    fun testGetEvent_WhenNotExists() = runBlocking {
+        val eventResult = eventRepository.getEvent("fadweavwa").first()
+
+        assertThat(eventResult, equalTo(null))
+    }
 }

@@ -46,4 +46,18 @@ class EventDaoTest {
         assertThat(eventList[1].name, equalTo(eventB.name))
         assertThat(eventList[2].name, equalTo(eventC.name))
     }
+
+    @Test
+    fun testGetEventByName() = runBlocking {
+        val result = eventDao.getEventByName(eventA.name).first()
+
+        assertThat(result.name, equalTo(eventA.name))
+    }
+
+    @Test
+    fun testGetEventByName_WhenNotExist() = runBlocking {
+        val result = eventDao.getEventByName("gsfawkeafhweu").first()
+
+        assertThat(result, equalTo(null))
+    }
 }
