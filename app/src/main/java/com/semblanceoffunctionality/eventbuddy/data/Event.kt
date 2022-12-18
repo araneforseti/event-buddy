@@ -7,7 +7,6 @@ import java.util.*
 
 @Entity(tableName = "events")
 data class Event(
-    @PrimaryKey @ColumnInfo(name = "id") var id: String,
     var name: String,
     var dateStart: String="Start TBD",
     var dateEnd: String="End TBD",
@@ -22,5 +21,6 @@ data class Event(
     var hotelBooked: Boolean = false,
     var hotelInfo: String = "Hotel Info tbd",
     var roomies: String = "Roomies: TBD",
-    var price: String = "\$TBD"
+    var price: String = "\$TBD",
+    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") var id: Int = 0
 )

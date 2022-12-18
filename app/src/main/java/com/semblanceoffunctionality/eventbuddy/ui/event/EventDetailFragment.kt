@@ -32,12 +32,13 @@ class EventDetailFragment : Fragment() {
             lifecycleOwner = viewLifecycleOwner
             saveEvent.setOnClickListener {
                 val eventId = eventViewModel.event.value!!.id
-                var updatedEvent = Event(eventId,
+                var updatedEvent = Event(
                     eventName.text.toString(), eventStart.text.toString(), eventEnd.text.toString(),
                     eventRegistered.isChecked, eventPaid.isChecked, eventWebsite.text.toString(),
                     eventFacebook.text.toString(), eventScoring.text.toString(), eventVenue.text.toString(),
                     travelBooked.isChecked, eventTravelInfo.text.toString(), eventHotelBooked.isChecked,
-                    eventHotelInfo.text.toString(), eventRoomies.text.toString(), eventHotelPrice.text.toString())
+                    eventHotelInfo.text.toString(), eventRoomies.text.toString(), eventHotelPrice.text.toString(),
+                    eventId)
                 eventViewModel.updateEvent(updatedEvent)
             }
         }
