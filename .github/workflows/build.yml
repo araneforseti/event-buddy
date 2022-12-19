@@ -9,7 +9,7 @@ env:
 # Where will they run
 jobs:
    run-tests:
-     uses: araneforseti/event-buddy/.github/workflows/tests.yml
+     uses: araneforseti/event-buddy/.github/workflows/tests.yml@main
      with:
        api_level: 31
        java_version: 11
