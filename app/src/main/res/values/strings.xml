@@ -18,4 +18,10 @@
     <string name="event_name_hint">Event Name</string>
     <string name="event_start_hint">Estimated Event Start Date</string>
     <string name="event_end_hint">Estimated Event End Date</string>
+
+    <string name="event_save">Saved event changes</string>
+    <string name="info_save">Saved personal info changes</string>
+
+    <string name="import_data">Import Data not yet implemented</string>
+    <string name="export_data">Export Data not yet implemented</string>
 </resources>

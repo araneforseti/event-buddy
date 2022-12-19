@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.google.android.material.snackbar.Snackbar
 import com.semblanceoffunctionality.eventbuddy.R
 import com.semblanceoffunctionality.eventbuddy.data.Personal
 import com.semblanceoffunctionality.eventbuddy.databinding.FragmentPersonalBinding
@@ -34,6 +36,7 @@ class PersonalFragment : Fragment() {
                 val infoToUpdate : Personal = info.value!!
                 infoToUpdate.number = myWsdcNumber.text.toString()
                 personalViewModel.updateInfo(info.value!!)
+                Snackbar.make(requireView(), R.string.info_save, Toast.LENGTH_SHORT).show()
             }
         }
 

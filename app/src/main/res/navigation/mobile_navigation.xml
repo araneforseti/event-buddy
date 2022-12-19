@@ -22,6 +22,13 @@
         tools:layout="@layout/fragment_personal" />
 
     <fragment
+        android:id="@+id/nav_data"
+        android:name="com.semblanceoffunctionality.eventbuddy.ui.data.DataFragment"
+        android:label="Data Management"
+        tools:layout="@layout/fragment_data"
+        />
+
+    <fragment
         android:id="@+id/nav_event"
         android:name="com.semblanceoffunctionality.eventbuddy.ui.event.EventDetailFragment"
         android:label="Event Detail"
