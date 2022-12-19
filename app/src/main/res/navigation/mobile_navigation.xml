@@ -16,16 +16,10 @@
     </fragment>
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.semblanceoffunctionality.eventbuddy.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.semblanceoffunctionality.eventbuddy.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_personal"
+        android:name="com.semblanceoffunctionality.eventbuddy.ui.personal.PersonalFragment"
+        android:label="Personal Info"
+        tools:layout="@layout/fragment_personal" />
 
     <fragment
         android:id="@+id/nav_event"

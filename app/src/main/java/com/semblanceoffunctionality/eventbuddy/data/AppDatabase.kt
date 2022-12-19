@@ -7,9 +7,10 @@ import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.semblanceoffunctionality.eventbuddy.utilities.DATABASE_NAME
 
-@Database(entities = [Event::class], version = 1)
+@Database(entities = [Event::class, Personal::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun eventDao(): EventDao
+    abstract fun personalDao(): PersonalDao
 
     companion object {
 

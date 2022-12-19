@@ -23,4 +23,9 @@ class DatabaseModule {
     fun provideItemDao(appDatabase: AppDatabase): EventDao {
         return appDatabase.eventDao()
     }
+
+    @Provides
+    fun providePersonalDao(appDatabase: AppDatabase): PersonalDao {
+        return appDatabase.personalDao()
+    }
 }
