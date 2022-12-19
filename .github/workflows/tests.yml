@@ -12,24 +12,24 @@ on:
 
 # Where will they run
 jobs:
-   lint:
-      runs-on: macos-latest
+   #lint:
+   #   runs-on: macos-latest
 
-      steps:
-      - name: Checkout
-        uses: actions/checkout@v3.0.2
+   #   steps:
+   #   - name: Checkout
+   #     uses: actions/checkout@v3.0.2
 
-      - name: Set up our JDK environment
-        uses: actions/setup-java@v3.4.0
-        with:
-           distribution: 'temurin'
-           java-version: ${{ inputs.java_version }}
+   #   - name: Set up our JDK environment
+   #     uses: actions/setup-java@v3.4.0
+   #     with:
+   #        distribution: 'temurin'
+   #        java-version: ${{ inputs.java_version }}
 
-      - name: Gradle cache
-        uses: gradle/gradle-build-action@v2
+   #   - name: Gradle cache
+   #     uses: gradle/gradle-build-action@v2
 
-      - name: Run Kotlin Linter
-        run: ./gradlew lint
+   #   - name: Run Kotlin Linter
+   #     run: ./gradlew lint
 
    unit:
      runs-on: macos-latest
