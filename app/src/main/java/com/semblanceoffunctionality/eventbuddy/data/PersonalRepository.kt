@@ -10,13 +10,14 @@ import javax.inject.Singleton
 @Singleton
 class PersonalRepository @Inject constructor(private val personalDao: PersonalDao) {
     fun getInfo() = runBlocking {
-        var info = personalDao.getInfo().asLiveData().value
+        val info = personalDao.getInfo().asLiveData().value
         if (info == null) {
-            info = Personal()
             personalDao.insertAll(listOf(Personal()))
         }
         personalDao.getInfo()
     }
 
     fun updateInfo(info: Personal) = personalDao.update(info)
+
+    suspend fun importInfo(info: Personal) = personalDao.insertAll(listOf(info))
 }

@@ -15,4 +15,6 @@ class EventRepository @Inject constructor(private val eventDao: EventDao) {
     fun getEvent(eventName: String) = eventDao.getEventByName(eventName)
 
     fun updateEvent(event: Event) = eventDao.updateEvent(event)
+
+    suspend fun createEvents(events: List<Event>) = eventDao.insertAll(events)
 }
