@@ -47,7 +47,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.0'
-    implementation 'com.google.dagger:hilt-android-gradle-plugin:2.44.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2'
+    implementation 'com.google.dagger:hilt-android-gradle-plugin:2.45.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2'
     implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
 
     testImplementation 'junit:junit:4.13.2'
@@ -56,7 +56,7 @@ dependencies {
     androidTestImplementation "androidx.arch.core:core-testing:$rootProject.coreTestingVersion"
 
     kapt 'com.google.dagger:hilt-android-compiler:2.45'
-    implementation 'com.google.dagger:hilt-android:2.44'
+    implementation 'com.google.dagger:hilt-android:2.45'
 
     implementation "androidx.room:room-runtime:$room_version"
     implementation "androidx.room:room-paging:$room_version"
