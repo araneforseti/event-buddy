@@ -47,7 +47,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.0'
-    implementation 'com.google.dagger:hilt-android-gradle-plugin:2.44.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2'
+    implementation 'com.google.dagger:hilt-android-gradle-plugin:2.45'
     implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
 
     testImplementation 'junit:junit:4.13.2'
