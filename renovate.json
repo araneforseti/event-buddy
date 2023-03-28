@@ -4,6 +4,7 @@
     "config:base"
   ],
   "platformAutomerge": true,
+  "branchConcurrentLimit": 3,
   "packageRules": [
     {
       "description": "Automerge non-major updates",
