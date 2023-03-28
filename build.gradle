@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        coreTestingVersion = '2.1.0'
+        coreTestingVersion = '2.2.0'
         hiltVersion = '2.44'
         room_version = '2.4.3'
         nav_version = '2.5.3'
