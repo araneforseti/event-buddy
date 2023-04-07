@@ -16,13 +16,23 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/event_name"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:text="@{viewModel.event.name}"
             android:gravity="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Event Name"
+            />
+
+        <ImageButton
+            android:id="@+id/delete"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintStart_toEndOf="@id/event_name"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/delete_description"
+            android:src="@drawable/ic_delete"
             />
 
         <com.google.android.material.textfield.TextInputEditText

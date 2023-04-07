@@ -25,6 +25,12 @@ class EventDetailViewModel @Inject constructor(
         }
     }
 
+    fun deleteSelf() {
+        CoroutineScope(Dispatchers.IO).launch {
+            eventRepository.deleteEvent(event.value!!)
+        }
+    }
+
     companion object {
         private const val EVENT_ID_SAVED_STATE_KEY = "event"
     }

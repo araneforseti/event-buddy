@@ -44,6 +44,9 @@ class EventDetailFragment : Fragment() {
                 eventViewModel.updateEvent(updatedEvent)
                 Snackbar.make(requireView(), R.string.event_save, Toast.LENGTH_SHORT).show()
             }
+            delete.setOnClickListener {
+                eventViewModel.deleteSelf()
+            }
         }
 
         return binding.root

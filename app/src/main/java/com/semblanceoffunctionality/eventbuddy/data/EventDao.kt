@@ -1,5 +1,6 @@
 package com.semblanceoffunctionality.eventbuddy.data
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 
@@ -16,4 +17,7 @@ interface EventDao {
 
     @Update
     fun updateEvent(event: Event)
+
+    @Delete
+    fun deleteEvent(event: Event)
 }
