@@ -22,4 +22,5 @@
 
     <string name="import_data">Import Data not yet implemented</string>
     <string name="export_data">Export Data not yet implemented</string>
+    <string name="delete_description">Delete</string>
 </resources>
