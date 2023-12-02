@@ -17,7 +17,6 @@ jobs:
    build-nonprod:
      runs-on: macos-latest
      needs: [run-tests]
-     if: github.ref != 'refs/heads/main'
      steps:
        - name: Checkout
          uses: actions/checkout@v3.5.2
@@ -32,11 +31,10 @@ jobs:
          uses: gradle/gradle-build-action@v2
 
        - name: build debug
-         if: github.ref != 'refs/heads/main'
-         run: ./gradlew app:bundleDebug
+         run: ./gradlew app:assembleDebug
 
-       - name: Upload our APK
+       - name: Upload our app
          uses: actions/upload-artifact@v3.1.2
          with:
            name: apk
-           path: app/build/outputs/apk/debug/app-*.apk
+           path: app/build/outputs/apk/debug/app-debug.apk
