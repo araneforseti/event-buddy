@@ -38,3 +38,6 @@ jobs:
          with:
            name: apk
            path: app/build/outputs/apk/debug/app-debug.apk
+
+       - name: Check what is there
+         run: ls app/build/outputs/apk/debug
