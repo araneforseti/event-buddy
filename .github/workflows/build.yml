@@ -33,11 +33,8 @@ jobs:
        - name: build debug
          run: ./gradlew app:bundleDebug
 
-       - name: Upload our APK
+       - name: Upload our app
          uses: actions/upload-artifact@v3.1.2
          with:
-           name: apk
-           path: app/build/outputs/apk/debug/app-debug.apk
-
-       - name: Check what is there
-         run: ls ./app/build/outputs
+           name: aab
+           path: app/build/outputs/bundle/debug/app-debug.aab
