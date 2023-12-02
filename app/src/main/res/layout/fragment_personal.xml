@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.semblanceoffunctionality.eventbuddy.ui.personal.PersonalViewModel" />
@@ -16,21 +17,19 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="@string/my_number"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:text="My number:"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/my_wsdc_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.info.number}"
             android:gravity="center"
+            android:text="@{viewModel.info.number}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="WSDC Number"
-            />
+            tools:text="WSDC Number" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/save_info"
@@ -39,9 +38,9 @@
             android:layout_gravity="bottom|end"
             android:layout_marginEnd="@dimen/fab_margin"
             android:layout_marginBottom="16dp"
+            android:contentDescription="@string/save_button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_save"
-            android:contentDescription="Save Button" />
+            app:srcCompat="@drawable/ic_save" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

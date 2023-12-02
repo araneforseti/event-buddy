@@ -14,7 +14,7 @@
             android:layout_margin="50dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:text="Export Data"
+            android:text="@string/export_data"
             />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -24,7 +24,7 @@
             android:layout_margin="50dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/export_data"
-            android:text="Import Data"
+            android:text="@string/import_data"
             />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -37,6 +37,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/ic_save"
-            android:contentDescription="Save Button" />
+            android:contentDescription="@string/save_button" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

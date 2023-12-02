@@ -65,7 +65,7 @@
             android:checked="@{viewModel.event.registered}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/event_start"
-            android:text="Event Registered"
+            android:text="@string/event_registered"
             />
 
         <androidx.appcompat.widget.SwitchCompat
@@ -76,7 +76,7 @@
             android:checked="@{viewModel.event.paid}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/event_end"
-            android:text="Event Paid"
+            android:text="@string/event_paid"
             />
 
         <com.google.android.material.textfield.TextInputEditText
@@ -130,7 +130,7 @@
             android:gravity="center"
             app:layout_constraintStart_toStartOf="@+id/event_travel_label"
             app:layout_constraintTop_toBottomOf="@+id/event_travel_info"
-            android:text="-- Hotel Info --"
+            android:text="@string/hotel_info"
             />
 
         <androidx.appcompat.widget.SwitchCompat
@@ -141,7 +141,7 @@
             android:checked="@{viewModel.event.hotelBooked}"
             app:layout_constraintStart_toStartOf="@+id/event_hotel_label"
             app:layout_constraintTop_toBottomOf="@+id/event_hotel_label"
-            android:text="Hotel Booked"
+            android:text="@string/hotel_booked"
             />
 
         <com.google.android.material.textfield.TextInputEditText
@@ -181,7 +181,7 @@
             android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/event_paid"
-            android:text="-- Travel Info --"
+            android:text="@string/travel_info"
             />
 
         <androidx.appcompat.widget.SwitchCompat
@@ -191,7 +191,7 @@
             android:gravity="center"
             app:layout_constraintStart_toStartOf="@+id/event_travel_label"
             app:layout_constraintTop_toBottomOf="@+id/event_travel_label"
-            android:text="Travel Booked"
+            android:text="@string/travel_booked"
             android:checked="@{viewModel.event.travelBooked}"
             />
 
@@ -215,6 +215,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/ic_save"
-            android:contentDescription="Save Button" />
+            android:contentDescription="@string/save_button" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -34,7 +34,7 @@ class EventDetailFragment : Fragment() {
             lifecycleOwner = viewLifecycleOwner
             saveEvent.setOnClickListener {
                 val eventId = eventViewModel.event.value!!.id
-                var updatedEvent = Event(
+                val updatedEvent = Event(
                     eventName.text.toString(), eventStart.text.toString(), eventEnd.text.toString(),
                     eventRegistered.isChecked, eventPaid.isChecked, eventWebsite.text.toString(),
                     eventFacebook.text.toString(), eventScoring.text.toString(), eventVenue.text.toString(),

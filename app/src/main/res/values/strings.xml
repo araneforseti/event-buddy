@@ -3,7 +3,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Event Buddy</string>
-    <string name="nav_header_subtitle"></string>
+    <string name="nav_header_subtitle_empty_string"></string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
@@ -20,7 +20,19 @@
     <string name="event_save">Saved event changes</string>
     <string name="info_save">Saved personal info changes</string>
 
-    <string name="import_data">Import Data not yet implemented</string>
-    <string name="export_data">Export Data not yet implemented</string>
+    <string name="import_data_not_yet_implemented">Import Data not yet implemented</string>
+    <string name="export_data_not_yet_implemented">Export Data not yet implemented</string>
     <string name="delete_description">Delete</string>
+    <string name="export_data">Export Data</string>
+    <string name="import_data">Import Data</string>
+    <string name="save_button">Save Button</string>
+    <string name="event_registered">Event Registered</string>
+    <string name="event_paid">Event Paid</string>
+    <string name="hotel_info">-- Hotel Info --</string>
+    <string name="hotel_booked">Hotel Booked</string>
+    <string name="travel_info">-- Travel Info --</string>
+    <string name="travel_booked">Travel Booked</string>
+    <string name="add_event_button">Add Event Button</string>
+    <string name="my_number">My number:</string>
+    <string name="place_holder_between_date_and_time">-</string>
 </resources>

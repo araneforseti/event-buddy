@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toEndOf="@+id/event_start"
                 app:layout_constraintTop_toTopOf="parent"
-                android:text="-"
+                android:text="@string/place_holder_between_date_and_time"
                 tools:text="-"
                 />
             <TextView
