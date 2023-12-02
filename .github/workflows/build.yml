@@ -31,10 +31,10 @@ jobs:
          uses: gradle/gradle-build-action@v2
 
        - name: build debug
-         run: ./gradlew app:bundleDebug
+         run: ./gradlew app:assembleDebug
 
        - name: Upload our app
          uses: actions/upload-artifact@v3.1.2
          with:
-           name: aab
-           path: app/build/outputs/bundle/debug/app-debug.aab
+           name: apk
+           path: app/build/outputs/apk/debug/app-debug.apk
