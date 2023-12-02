@@ -42,12 +42,12 @@ class DataFragment : Fragment() {
             importData.setOnClickListener {
                 chooseFileForImport()
 
-                Snackbar.make(requireView(), R.string.import_data, LENGTH_SHORT).show()
+                Snackbar.make(requireView(), R.string.import_data_not_yet_implemented, LENGTH_SHORT).show()
             }
             exportData.setOnClickListener {
                 chooseFileForExport()
 
-                Snackbar.make(requireView(), R.string.export_data, LENGTH_SHORT).show()
+                Snackbar.make(requireView(), R.string.export_data_not_yet_implemented, LENGTH_SHORT).show()
             }
         }
 
