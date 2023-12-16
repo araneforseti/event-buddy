@@ -4,25 +4,24 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
 apply plugin: 'androidx.navigation.safeargs'
 
-allprojects {
-    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
-        kotlinOptions {
-            jvmTarget = "11"
-        }
-    }
-}
-
 android {
-    compileSdk 33
+    compileSdk 34
+    namespace 'com.semblanceoffunctionality.eventbuddy'
 
     defaultConfig {
         applicationId "com.semblanceoffunctionality.eventbuddy"
         minSdk 30
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        kapt {
+            arguments {
+                arg("room.schemaLocation", "$projectDir/schemas")
+            }
+        }
     }
 
     buildTypes {
@@ -31,13 +30,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
+
     kotlinOptions {
-        jvmTarget = 11
+        jvmTarget = 17
     }
+
     buildFeatures {
         viewBinding true
         dataBinding true
@@ -46,15 +48,15 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.core:core-ktx:1.12.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'com.google.android.material:material:1.10.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.6.0'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
-    implementation 'com.google.dagger:hilt-android-gradle-plugin:2.45'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.2'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.7.6'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.7.6'
+    implementation 'com.google.dagger:hilt-android-gradle-plugin:2.48'
     implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
 
     testImplementation 'junit:junit:4.13.2'
@@ -62,8 +64,8 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     androidTestImplementation "androidx.arch.core:core-testing:$rootProject.coreTestingVersion"
 
-    kapt 'com.google.dagger:hilt-android-compiler:2.45'
-    implementation 'com.google.dagger:hilt-android:2.45'
+    kapt("com.google.dagger:hilt-android-compiler:2.48")
+    implementation 'com.google.dagger:hilt-android:2.48'
 
     implementation "androidx.room:room-runtime:$room_version"
     implementation "androidx.room:room-paging:$room_version"
@@ -86,4 +88,8 @@ dependencies {
 
     // optional - Test helpers
     testImplementation "androidx.room:room-testing:$room_version"
+}
+
+kapt {
+    correctErrorTypes true
 }

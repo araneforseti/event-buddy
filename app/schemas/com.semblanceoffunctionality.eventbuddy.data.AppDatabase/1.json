@@ -1,0 +1,192 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "e7d5da13ca1b214a3480f62125e63fc8",
+    "entities": [
+      {
+        "tableName": "events",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `dateStart` TEXT NOT NULL, `dateEnd` TEXT NOT NULL, `registered` INTEGER NOT NULL, `paid` INTEGER NOT NULL, `website` TEXT NOT NULL, `facebook` TEXT NOT NULL, `scoring` TEXT NOT NULL, `venue` TEXT NOT NULL, `travelBooked` INTEGER NOT NULL, `travelInfo` TEXT NOT NULL, `hotelBooked` INTEGER NOT NULL, `hotelInfo` TEXT NOT NULL, `roomies` TEXT NOT NULL, `price` TEXT NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dateStart",
+            "columnName": "dateStart",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dateEnd",
+            "columnName": "dateEnd",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "registered",
+            "columnName": "registered",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "paid",
+            "columnName": "paid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "website",
+            "columnName": "website",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "facebook",
+            "columnName": "facebook",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "scoring",
+            "columnName": "scoring",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "venue",
+            "columnName": "venue",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "travelBooked",
+            "columnName": "travelBooked",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "travelInfo",
+            "columnName": "travelInfo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hotelBooked",
+            "columnName": "hotelBooked",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hotelInfo",
+            "columnName": "hotelInfo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "roomies",
+            "columnName": "roomies",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "price",
+            "columnName": "price",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "personal",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `number` TEXT NOT NULL, `divisionLeader` TEXT NOT NULL, `pointsLeader` TEXT NOT NULL, `neededPointsLeader` TEXT NOT NULL, `divisionFollower` TEXT NOT NULL, `pointsFollower` TEXT NOT NULL, `neededPointsFollower` TEXT NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "number",
+            "columnName": "number",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "divisionLeader",
+            "columnName": "divisionLeader",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pointsLeader",
+            "columnName": "pointsLeader",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "neededPointsLeader",
+            "columnName": "neededPointsLeader",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "divisionFollower",
+            "columnName": "divisionFollower",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pointsFollower",
+            "columnName": "pointsFollower",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "neededPointsFollower",
+            "columnName": "neededPointsFollower",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'e7d5da13ca1b214a3480f62125e63fc8')"
+    ]
+  }
+}
