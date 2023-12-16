@@ -4,7 +4,7 @@ on: pull_request
 
 env:
   API_VERSION: 31
-  JAVA_VERSION: 11
+  JAVA_VERSION: 17
 
 # Where will they run
 jobs:
@@ -12,7 +12,7 @@ jobs:
      uses: araneforseti/event-buddy/.github/workflows/tests.yml@main
      with:
        api_level: 31
-       java_version: 11
+       java_version: 17
 
    build-nonprod:
      runs-on: macos-latest
