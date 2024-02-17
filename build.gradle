@@ -3,7 +3,7 @@ buildscript {
         coreTestingVersion = '2.2.0'
         hiltVersion = '2.44'
         room_version = '2.6.1'
-        nav_version = '2.7.6'
+        nav_version = '2.7.7'
         gsonVersion = '2.10.1'
     }
 
